@@ -5,20 +5,21 @@ const Candy = db.define('candy', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true,
+    validate: {notEmpty: true}
+
   },
   description: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true,
+    validate: {notEmpty: true},
   },
   quantity: {
     type: Sequelize.INTEGER,
-    max: 10,
+    validate: {max: 10}
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: true,
+    defaultValue: 'https://d.ibtimes.co.uk/en/full/1409516/how-fix-error-update-package-missing-systemimg-android-50-factory-images-nexus-devices.jpg'
   }
 });
 
